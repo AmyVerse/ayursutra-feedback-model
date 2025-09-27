@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raktamokshana Therapy Consultation</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body { font-family:'Poppins',sans-serif; margin:0; padding:0; background:#f0f7f2; min-height:100vh; }
+h2 { text-align:center; margin-top:30px; font-family:'Merriweather',serif; font-weight:700; color:#2e5939; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
+form { max-width:800px; margin:40px auto; background:#fff; padding:40px; border-radius:20px; box-shadow:0 12px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
+form:hover { transform: translateY(-5px); }
+fieldset { border:none; margin-bottom:30px; }
+legend { font-size:22px; font-weight:700; margin-bottom:20px; color:#2e5939; border-bottom:2px solid #2e5939; padding-bottom:5px; display:inline-block; }
+.question-card { background:#eaf5ea; border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+.question-card:hover { transform: translateY(-3px); box-shadow:0 12px 25px rgba(0,0,0,0.1); }
+label { font-weight:600; margin-bottom:10px; display:block; color:#2e5939; font-size:16px; }
+select { width:100%; padding:12px 15px; font-size:16px; border-radius:10px; border:1px solid #a3c6a3; background:#fff; cursor:pointer; transition:border 0.3s, box-shadow 0.3s; }
+select:hover { border-color:#2e5939; }
+select:focus { border-color:#2e5939; box-shadow:0 0 8px rgba(46,89,57,0.3); outline:none; }
+button { width:100%; padding:18px; font-size:20px; font-weight:700; border:none; border-radius:15px; background:linear-gradient(90deg,#2e5939,#4caf50); color:white; cursor:pointer; transition: background 0.3s, transform 0.2s; margin-top:20px; }
+button:hover { background:linear-gradient(90deg,#24512f,#3e8e41); transform: scale(1.05); }
+</style>
+</head>
+<body>
+<h2>Raktamokshana Therapy Consultation</h2>
+<form action="/predict_raktamokshana" method="post">
+
+<!-- Mental Health -->
+<fieldset>
+<legend>🧠 Mental Health</legend>
+
+<div class="question-card">
+<label for="Mood">🌿 How do you feel today?</label>
+<select name="Mood" required>
+<option value="Very Sad">Very Sad</option>
+<option value="Sad">Sad</option>
+<option value="Neutral">Neutral</option>
+<option value="Happy">Happy</option>
+<option value="Very Happy">Very Happy</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Stress_Level">🍃 Are you feeling stressed?</label>
+<select name="Stress_Level" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Concentration">🌱 Can you focus on tasks easily?</label>
+<select name="Concentration" required>
+<option value="Very Poor">Very Poor</option>
+<option value="Poor">Poor</option>
+<option value="Average">Average</option>
+<option value="Good">Good</option>
+<option value="Excellent">Excellent</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Mood_Swings">🌸 Do your moods change quickly?</label>
+<select name="Mood_Swings" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Sleep_Quality">🌙 How well did you sleep last night?</label>
+<select name="Sleep_Quality" required>
+<option value="Very Poor">Very Poor</option>
+<option value="Poor">Poor</option>
+<option value="Average">Average</option>
+<option value="Good">Good</option>
+<option value="Excellent">Excellent</option>
+</select>
+</div>
+
+</fieldset>
+
+<!-- Physical Health -->
+<fieldset>
+<legend>💪 Physical Health</legend>
+
+<div class="question-card">
+<label for="Energy_Level">☀️ How much energy do you have today?</label>
+<select name="Energy_Level" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Appetite">🍲 How is your appetite today?</label>
+<select name="Appetite" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Digestion">🍏 How is your digestion?</label>
+<select name="Digestion" required>
+<option value="Very Poor">Very Poor</option>
+<option value="Poor">Poor</option>
+<option value="Average">Average</option>
+<option value="Good">Good</option>
+<option value="Excellent">Excellent</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Physical_Activity">🏃 How active are you today?</label>
+<select name="Physical_Activity" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Hydration">💧 How much water have you had today?</label>
+<select name="Hydration" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+</fieldset>
+
+<!-- Raktamokshana Symptoms -->
+<fieldset>
+<legend>🩸 Raktamokshana Symptoms</legend>
+
+<div class="question-card">
+<label for="Skin_Redness">🩸 Is your skin red or flushed?</label>
+<select name="Skin_Redness" required>
+<option value="None">None</option>
+<option value="Mild">Mild</option>
+<option value="Moderate">Moderate</option>
+<option value="Severe">Severe</option>
+<option value="Very Severe">Very Severe</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Body_Heat">🔥 Do you feel hot or overheated?</label>
+<select name="Body_Heat" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Acidity">🧂 Do you experience acidity or heartburn?</label>
+<select name="Acidity" required>
+<option value="Very Low">Very Low</option>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+<option value="Very High">Very High</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Bleeding_Tendency">🩹 Do you bleed easily (nosebleeds, gums)?</label>
+<select name="Bleeding_Tendency" required>
+<option value="None">None</option>
+<option value="Mild">Mild</option>
+<option value="Moderate">Moderate</option>
+<option value="Severe">Severe</option>
+<option value="Very Severe">Very Severe</option>
+</select>
+</div>
+
+<div class="question-card">
+<label for="Inflammation">🔥 Any swelling or inflammation in body?</label>
+<select name="Inflammation" required>
+<option value="None">None</option>
+<option value="Mild">Mild</option>
+<option value="Moderate">Moderate</option>
+<option value="Severe">Severe</option>
+<option value="Very Severe">Very Severe</option>
+</select>
+</div>
+
+</fieldset>
+
+<button type="submit">Submit for Prediction</button>
+</form>
+</body>
+</html>

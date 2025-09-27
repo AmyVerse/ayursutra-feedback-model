@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nasya Therapy Prediction Result</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f0f7f2; padding: 50px; }
+h2 { text-align:center; color: #2e5939; }
+.result-card { max-width:600px; margin:20px auto; padding:30px; background:#ffffff; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+p { font-size:18px; margin:15px 0; }
+strong { color:#2e5939; }
+</style>
+</head>
+<body>
+<h2>Nasya Therapy Prediction Result</h2>
+<div class="result-card">
+<p><strong>Vata Level:</strong> {{ vata_level }}</p>
+{% if overall_improvement %}
+<p><strong>Overall Therapy Improvement:</strong> {{ overall_improvement }}</p>
+{% endif %}
+<p><strong>General Health Improvement:</strong> {{ general_improvement }}</p>
+</div>
+</body>
+</html>
