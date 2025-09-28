@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vamana Therapy Consultation</title>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vamana Therapy Consultation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
         margin: 0;
         padding: 0;
         background: #f0f7f2; /* light greenish */
         min-height: 100vh;
-    }
+      }
 
-    h2 {
+      h2 {
         text-align: center;
         margin-top: 30px;
-        font-family: 'Merriweather', serif;
+        font-family: "Merriweather", serif;
         font-weight: 700;
         color: #2e5939; /* dark green */
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
 
-    form {
+      form {
         max-width: 800px;
         margin: 40px auto;
         background: #ffffff;
         padding: 40px;
         border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
-    }
+      }
 
-    form:hover {
+      form:hover {
         transform: translateY(-5px);
-    }
+      }
 
-    fieldset {
+      fieldset {
         border: none;
         margin-bottom: 30px;
-    }
+      }
 
-    legend {
+      legend {
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 20px;
@@ -50,31 +53,31 @@
         border-bottom: 2px solid #2e5939;
         padding-bottom: 5px;
         display: inline-block;
-    }
+      }
 
-    .question-card {
+      .question-card {
         background: #eaf5ea; /* soft green */
         border-radius: 15px;
         padding: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s, box-shadow 0.3s;
-    }
+      }
 
-    .question-card:hover {
+      .question-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-    }
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      }
 
-    label {
+      label {
         font-weight: 600;
         margin-bottom: 10px;
         display: block;
         color: #2e5939;
         font-size: 16px;
-    }
+      }
 
-    select {
+      select {
         width: 100%;
         padding: 12px 15px;
         font-size: 16px;
@@ -83,19 +86,19 @@
         background: #ffffff;
         transition: border 0.3s, box-shadow 0.3s;
         cursor: pointer;
-    }
+      }
 
-    select:hover {
+      select:hover {
         border-color: #2e5939;
-    }
+      }
 
-    select:focus {
+      select:focus {
         border-color: #2e5939;
-        box-shadow: 0 0 8px rgba(46,89,57,0.3);
+        box-shadow: 0 0 8px rgba(46, 89, 57, 0.3);
         outline: none;
-    }
+      }
 
-    button {
+      button {
         width: 100%;
         padding: 18px;
         font-size: 20px;
@@ -107,205 +110,217 @@
         cursor: pointer;
         transition: background 0.3s, transform 0.2s;
         margin-top: 20px;
-    }
+      }
 
-    button:hover {
+      button:hover {
         background: linear-gradient(90deg, #24512f, #3e8e41);
         transform: scale(1.05);
-    }
+      }
 
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
         form {
-            margin: 20px;
-            padding: 25px;
+          margin: 20px;
+          padding: 25px;
         }
 
         legend {
-            font-size: 20px;
+          font-size: 20px;
         }
-    }
-</style>
-</head>
-<body>
-<h2>Vamana Therapy Consultation</h2>
-<form action="/predict" method="post">
-
-    <!-- Mental Health -->
-    <fieldset>
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Vamana Therapy Consultation</h2>
+    <form action="/vamana/predict" method="post">
+      <!-- Mental Health -->
+      <fieldset>
         <legend>Mental Health</legend>
 
         <div class="question-card">
-            <label for="Mood">🌿 How is your mood today?</label>
-            <select name="Mood" required>
-                <option value="Very Sad">Very Sad</option>
-                <option value="Sad">Sad</option>
-                <option value="Neutral">Neutral</option>
-                <option value="Happy">Happy</option>
-                <option value="Very Happy">Very Happy</option>
-            </select>
+          <label for="Mood">🌿 How is your mood today?</label>
+          <select name="Mood" required>
+            <option value="Very Sad">Very Sad</option>
+            <option value="Sad">Sad</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Happy">Happy</option>
+            <option value="Very Happy">Very Happy</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Stress_Level">🍃 How stressed do you feel?</label>
-            <select name="Stress_Level" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Stress_Level">🍃 How stressed do you feel?</label>
+          <select name="Stress_Level" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Concentration">🌱 How well can you focus your mind?</label>
-            <select name="Concentration" required>
-                <option value="Very Poor">Very Poor</option>
-                <option value="Poor">Poor</option>
-                <option value="Average">Average</option>
-                <option value="Good">Good</option>
-                <option value="Excellent">Excellent</option>
-            </select>
+          <label for="Concentration"
+            >🌱 How well can you focus your mind?</label
+          >
+          <select name="Concentration" required>
+            <option value="Very Poor">Very Poor</option>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Mood_Swings">🌸 Do you experience mood swings often?</label>
-            <select name="Mood_Swings" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Mood_Swings"
+            >🌸 Do you experience mood swings often?</label
+          >
+          <select name="Mood_Swings" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
-    </fieldset>
+      </fieldset>
 
-    <!-- Physical Health -->
-    <fieldset>
+      <!-- Physical Health -->
+      <fieldset>
         <legend>Physical Health</legend>
 
         <div class="question-card">
-            <label for="Energy_Level">☀️ How is your energy throughout the day?</label>
-            <select name="Energy_Level" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Energy_Level"
+            >☀️ How is your energy throughout the day?</label
+          >
+          <select name="Energy_Level" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Appetite">🍲 How would you describe your appetite?</label>
-            <select name="Appetite" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Appetite">🍲 How would you describe your appetite?</label>
+          <select name="Appetite" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Sleep_Quality">🌙 How well do you sleep at night?</label>
-            <select name="Sleep_Quality" required>
-                <option value="Very Poor">Very Poor</option>
-                <option value="Poor">Poor</option>
-                <option value="Average">Average</option>
-                <option value="Good">Good</option>
-                <option value="Excellent">Excellent</option>
-            </select>
+          <label for="Sleep_Quality">🌙 How well do you sleep at night?</label>
+          <select name="Sleep_Quality" required>
+            <option value="Very Poor">Very Poor</option>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Digestion">🍏 How is your digestion?</label>
-            <select name="Digestion" required>
-                <option value="Very Poor">Very Poor</option>
-                <option value="Poor">Poor</option>
-                <option value="Average">Average</option>
-                <option value="Good">Good</option>
-                <option value="Excellent">Excellent</option>
-            </select>
+          <label for="Digestion">🍏 How is your digestion?</label>
+          <select name="Digestion" required>
+            <option value="Very Poor">Very Poor</option>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Physical_Activity">🏃 How active are you physically?</label>
-            <select name="Physical_Activity" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Physical_Activity"
+            >🏃 How active are you physically?</label
+          >
+          <select name="Physical_Activity" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
         <legend>Vamana Symptons</legend>
         <div class="question-card">
-            <label for="Hydration">💧 How much water do you drink daily?</label>
-            <select name="Hydration" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Hydration">💧 How much water do you drink daily?</label>
+          <select name="Hydration" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Thirst_Level">🥤 How thirsty do you feel generally?</label>
-            <select name="Thirst_Level" required>
-                <option value="Very Low">Very Low</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Very High">Very High</option>
-            </select>
+          <label for="Thirst_Level"
+            >🥤 How thirsty do you feel generally?</label
+          >
+          <select name="Thirst_Level" required>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Body_Temperature">🌡️ How is your body temperature?</label>
-            <select name="Body_Temperature" required>
-                <option value="Very Cold">Very Cold</option>
-                <option value="Cold">Cold</option>
-                <option value="Normal">Normal</option>
-                <option value="Warm">Warm</option>
-                <option value="Hot">Hot</option>
-            </select>
+          <label for="Body_Temperature">🌡️ How is your body temperature?</label>
+          <select name="Body_Temperature" required>
+            <option value="Very Cold">Very Cold</option>
+            <option value="Cold">Cold</option>
+            <option value="Normal">Normal</option>
+            <option value="Warm">Warm</option>
+            <option value="Hot">Hot</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Metabolism">🔥 How fast does your body burn energy? (Do you get full or hungry quickly?)</label>
-            <select name="Metabolism" required>
-                <option value="Very Slow">Very Slow</option>
-                <option value="Slow">Slow</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Fast">Fast</option>
-                <option value="Very Fast">Very Fast</option>
-            </select>
+          <label for="Metabolism"
+            >🔥 How fast does your body burn energy? (Do you get full or hungry
+            quickly?)</label
+          >
+          <select name="Metabolism" required>
+            <option value="Very Slow">Very Slow</option>
+            <option value="Slow">Slow</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Fast">Fast</option>
+            <option value="Very Fast">Very Fast</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Immunity">🛡️ How strong is your immunity?</label>
-            <select name="Immunity" required>
-                <option value="Very Weak">Very Weak</option>
-                <option value="Weak">Weak</option>
-                <option value="Average">Average</option>
-                <option value="Strong">Strong</option>
-                <option value="Very Strong">Very Strong</option>
-            </select>
+          <label for="Immunity">🛡️ How strong is your immunity?</label>
+          <select name="Immunity" required>
+            <option value="Very Weak">Very Weak</option>
+            <option value="Weak">Weak</option>
+            <option value="Average">Average</option>
+            <option value="Strong">Strong</option>
+            <option value="Very Strong">Very Strong</option>
+          </select>
         </div>
 
         <div class="question-card">
-            <label for="Flexibility">🤸 How flexible is your body?</label>
-            <select name="Flexibility" required>
-                <option value="Very Poor">Very Poor</option>
-                <option value="Poor">Poor</option>
-                <option value="Average">Average</option>
-                <option value="Good">Good</option>
-                <option value="Excellent">Excellent</option>
-            </select>
+          <label for="Flexibility">🤸 How flexible is your body?</label>
+          <select name="Flexibility" required>
+            <option value="Very Poor">Very Poor</option>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+          </select>
         </div>
-    </fieldset>
+      </fieldset>
 
-    <button type="submit">Submit for Prediction</button>
-</form>
-</body>
+      <button type="submit">Submit for Prediction</button>
+    </form>
+  </body>
 </html>

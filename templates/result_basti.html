@@ -1,25 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basti Therapy Prediction Result</title>
-<style>
-    body { font-family: Arial, sans-serif; background: #f0f7f2; padding: 50px; }
-    h2 { text-align:center; color: #2e5939; }
-    .result-card { max-width:600px; margin:20px auto; padding:30px; background:#ffffff; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
-    p { font-size:18px; margin:15px 0; }
-    strong { color:#2e5939; }
-</style>
-</head>
-<body>
-<h2>Basti Therapy Prediction Result</h2>
-<div class="result-card">
-    <p><strong>Vata Level:</strong> {{ vata_level }}</p>
-    {% if overall_improvement %}
-    <p><strong>Overall Therapy Improvement:</strong> {{ overall_improvement }}</p>
-    {% endif %}
-    <p><strong>General Health Improvement:</strong> {{ general_improvement }}</p>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌊 Basti Therapy Results - AyurSutra</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f0f7f2 0%, #e8f5e8 100%);
+        padding: 2rem;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-family: "Merriweather", serif;
+        color: #2e5939;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .result-card {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .result-item {
+        background: #eaf5ea;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-radius: 15px;
+        border-left: 5px solid #2e5939;
+      }
+
+      .result-label {
+        font-weight: 700;
+        color: #2e5939;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .result-value {
+        font-size: 1.3rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .btn-container {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        background: linear-gradient(90deg, #2e5939, #4caf50);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 1rem;
+      }
+
+      .btn:hover {
+        background: linear-gradient(90deg, #24512f, #3e8e41);
+        transform: scale(1.05);
+        color: white;
+        text-decoration: none;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border: 2px solid #2e5939;
+        color: #2e5939;
+      }
+
+      .btn-secondary:hover {
+        background: #2e5939;
+        color: white;
+      }
+
+      .therapy-icon {
+        font-size: 4rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="therapy-icon">🌊</span>
+        <h2>Basti Therapy Results</h2>
+        <p class="subtitle">Your personalized Ayurvedic assessment results</p>
+      </div>
+
+      <div class="result-card">
+        <div class="result-item">
+          <div class="result-label">Vata Dosha Level</div>
+          <div class="result-value">{{ vata_level }}</div>
+        </div>
+
+        {% if overall_improvement %}
+        <div class="result-item">
+          <div class="result-label">Overall Therapy Improvement</div>
+          <div class="result-value">{{ overall_improvement }}</div>
+        </div>
+        {% endif %}
+
+        <div class="result-item">
+          <div class="result-label">General Health Improvement</div>
+          <div class="result-value">{{ general_improvement }}</div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <a href="/" class="btn btn-secondary">🏠 Back to Home</a>
+        <a href="/basti" class="btn">🔄 Take Assessment Again</a>
+      </div>
+    </div>
+  </body>
 </html>

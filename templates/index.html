@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌿 AyurSutra - Panchakarma Therapy Feedback System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f0f7f2 0%, #e8f5e8 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        background: linear-gradient(90deg, #2e5939, #4caf50);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 {
+        font-family: "Merriweather", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        flex: 1;
+      }
+
+      .therapy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .therapy-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        border: 3px solid transparent;
+      }
+
+      .therapy-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border-color: #2e5939;
+      }
+
+      .therapy-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .therapy-card h3 {
+        font-family: "Merriweather", serif;
+        color: #2e5939;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .therapy-card p {
+        color: #666;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .therapy-btn {
+        background: linear-gradient(90deg, #2e5939, #4caf50);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .therapy-btn:hover {
+        background: linear-gradient(90deg, #24512f, #3e8e41);
+        transform: scale(1.05);
+        color: white;
+        text-decoration: none;
+      }
+
+      .intro-section {
+        text-align: center;
+        margin-bottom: 3rem;
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .intro-section h2 {
+        font-family: "Merriweather", serif;
+        color: #2e5939;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .intro-section p {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .footer {
+        background: #2e5939;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: auto;
+      }
+
+      .footer p {
+        opacity: 0.9;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .therapy-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🌿 AyurSutra</h1>
+      <p>AI-Powered Panchakarma Therapy Feedback System</p>
+    </header>
+
+    <div class="container">
+      <section class="intro-section">
+        <h2>Welcome to AyurSutra</h2>
+        <p>
+          Experience the perfect blend of ancient Ayurvedic wisdom and modern AI
+          technology. Our system helps track your Panchakarma therapy progress,
+          predict dosha imbalances, and provide personalized insights for your
+          wellness journey. Choose your therapy below to get started.
+        </p>
+      </section>
+
+      <div class="therapy-grid">
+        <div class="therapy-card">
+          <span class="therapy-icon">🌊</span>
+          <h3>Basti Therapy</h3>
+          <p>
+            Enema therapy for Vata dosha balance, digestive health, and lower
+            body detoxification. Helps with constipation, gas, and lower back
+            issues.
+          </p>
+          <a href="/basti" class="therapy-btn">Start Basti Assessment</a>
+        </div>
+
+        <div class="therapy-card">
+          <span class="therapy-icon">🌬️</span>
+          <h3>Nasya Therapy</h3>
+          <p>
+            Nasal detoxification for Vata disorders, headaches, and respiratory
+            issues. Ideal for sinus problems and mental clarity.
+          </p>
+          <a href="/nasya" class="therapy-btn">Start Nasya Assessment</a>
+        </div>
+
+        <div class="therapy-card">
+          <span class="therapy-icon">🌱</span>
+          <h3>Vamana Therapy</h3>
+          <p>
+            Therapeutic emesis for Kapha dosha imbalances, weight management,
+            and digestive cleansing. Helps with nausea and bloating.
+          </p>
+          <a href="/vamana" class="therapy-btn">Start Vamana Assessment</a>
+        </div>
+
+        <div class="therapy-card">
+          <span class="therapy-icon">🔥</span>
+          <h3>Virechana Therapy</h3>
+          <p>
+            Purgation therapy for Pitta dosha balance, liver detox, and skin
+            health. Effective for acidity, heartburn, and inflammation.
+          </p>
+          <a href="/virechana" class="therapy-btn"
+            >Start Virechana Assessment</a
+          >
+        </div>
+
+        <div class="therapy-card">
+          <span class="therapy-icon">🩸</span>
+          <h3>Raktamokshana Therapy</h3>
+          <p>
+            Bloodletting therapy for blood purification, skin disorders, and
+            Pitta-related conditions. Helps with circulation and joint pain.
+          </p>
+          <a href="/raktamokshana" class="therapy-btn"
+            >Start Raktamokshana Assessment</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        💚 "Balancing ancient Ayurveda with modern AI – one therapy at a time."
+      </p>
+    </footer>
+  </body>
+</html>
