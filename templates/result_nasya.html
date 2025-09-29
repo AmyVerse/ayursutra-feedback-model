@@ -1,25 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nasya Therapy Prediction Result</title>
-<style>
-body { font-family: Arial, sans-serif; background: #f0f7f2; padding: 50px; }
-h2 { text-align:center; color: #2e5939; }
-.result-card { max-width:600px; margin:20px auto; padding:30px; background:#ffffff; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
-p { font-size:18px; margin:15px 0; }
-strong { color:#2e5939; }
-</style>
-</head>
-<body>
-<h2>Nasya Therapy Prediction Result</h2>
-<div class="result-card">
-<p><strong>Vata Level:</strong> {{ vata_level }}</p>
-{% if overall_improvement %}
-<p><strong>Overall Therapy Improvement:</strong> {{ overall_improvement }}</p>
-{% endif %}
-<p><strong>General Health Improvement:</strong> {{ general_improvement }}</p>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌬️ Nasya Therapy Results - AyurSutra</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: white;
+        padding: 2rem;
+        min-height: 100vh;
+        margin: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        color: #26a69a;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .result-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        border-top: 4px solid #26a69a;
+      }
+
+      .result-item {
+        background: #e0f2f1;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-radius: 15px;
+        border-left: 4px solid #26a69a;
+        transition: all 0.3s ease;
+      }
+
+      .result-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .result-label {
+        font-weight: 600;
+        color: #26a69a;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .result-value {
+        font-size: 1.3rem;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .btn-container {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        background: linear-gradient(90deg, #26a69a, #009688);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        color: white;
+        text-decoration: none;
+      }
+
+      .btn-secondary {
+        background: white;
+        border: 1px solid #26a69a;
+        color: #26a69a;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .btn-secondary:hover {
+        background: #e0f2f1;
+        color: #009688;
+      }
+
+      .therapy-icon {
+        font-size: 4rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="therapy-icon">🌬️</span>
+        <h2>Nasya Therapy Results</h2>
+        <p class="subtitle">Your personalized Ayurvedic assessment results</p>
+      </div>
+
+      <div class="result-card">
+        <div class="result-item">
+          <div class="result-label">Vata Dosha Level</div>
+          <div class="result-value">{{ vata_level }}</div>
+        </div>
+
+        {% if overall_improvement %}
+        <div class="result-item">
+          <div class="result-label">Overall Therapy Improvement</div>
+          <div class="result-value">{{ overall_improvement }}</div>
+        </div>
+        {% endif %}
+
+        <div class="result-item">
+          <div class="result-label">General Health Improvement</div>
+          <div class="result-value">{{ general_improvement }}</div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <a href="/" class="btn btn-secondary">🏠 Back to Home</a>
+        <a href="/nasya" class="btn">🔄 Take Assessment Again</a>
+      </div>
+    </div>
+  </body>
 </html>
